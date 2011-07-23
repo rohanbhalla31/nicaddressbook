@@ -1,0 +1,32 @@
+<style type="text/css">
+h1
+{
+font-size:0.8em;
+color:#FF4500;
+}
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:70px;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+</style>
+
+<%s=Addressbook.find_by_username(session[:username])%>
+<%@name=s.name.titlecase%>
+<%= render 'master'%>
+
+<p align="center">
+<font size="6" color="green"><b>Upload a Document</b></font><br>
+  </p>
+
+<% @notice='new'%>
+<%= render 'form' %>
+
+

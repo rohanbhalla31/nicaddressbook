@@ -1,0 +1,52 @@
+<style type="text/css">
+
+body
+{
+background-color:#D6F7F8;
+}
+
+</style>
+<p align="center">
+<img src="/images/niclogo.jpg"/>
+<br>
+<br>
+<font face="Monotype Corsiva" size="5" color="blue"><b>Office Management System</b></font><br>
+<font face="Monotype Corsiva" size="4" color="BLACK"><b>( Training Division )</b></font><br>
+<br><br><br>
+</p>
+<p align="center"><%=notice%></p>
+<%= form_tag ('/addressbooks/home',:method=>'get') %>
+<table width="35%" align="center">
+<tr>
+<td >
+  Username:<%= text_field_tag 'username' %>
+<td>
+</tr>
+<tr>
+<td >
+  Password:&nbsp;<%= password_field_tag 'password' %>
+    <%=link_to 'Forgot Password?', "/addressbooks/passwordrecovery"%>
+  </td>
+   </tr>
+<tr>
+<td >
+Role&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="role">
+        <option>Select Role</option>
+        <option value="administrator">Administrator</option>
+        <option value="user">User</option>
+        </select>
+</td>
+</tr>
+<tr>
+<td>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= submit_tag 'Login' %>
+</td>
+</tr>
+</table>
+
+   </form>
+
+
+

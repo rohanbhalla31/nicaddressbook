@@ -1,0 +1,70 @@
+<style type="text/css">
+div
+{
+text-align:left;
+margin-left:50px;
+font-size:1.3em;
+color:#800080;
+}
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:100px;
+}
+
+</style>
+<br>
+<br>
+
+<%       s=Addressbook.find_by_username(session[:username])%>
+<%    @name=s.name.titlecase%>
+ 
+<%= form_for(@fileupload, :html=> {:multipart=>true}) do |f| %>
+    <% if @fileupload.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@fileupload.errors.count, "error") %> prohibited this File Upload:</h2>
+
+        <ul>
+        <% @fileupload.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div>
+    Subject: <%= f.text_field :title,:size=>50 %>
+  </div>
+    <br><br>
+   <div>
+     <% if @notice=='new' %>
+    Upload a Document:<%= f.file_field :load_file %> <b><%=notice%></b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;(only doc,docx,ppt,pptx,xls,xlsx,pdf,txt,rtf,odt,ott,oth,odm)
+      <%end%>
+     <br><br>Keywords:
+  </div>
+    <br>
+    <div>
+    <%= f.text_area :keywords,:cols =>50, :rows => 10%>
+  </div>
+    <br>
+    <div class="field">
+    Private
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Shared
+    <br>
+   <%= f.radio_button :fvisible,'private'  %>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <%= f.radio_button :fvisible,'shared'  %>
+   </div>
+   <br><br>
+  <div>
+    <%= f.submit 'Upload' %>
+  </div>
+<% end %>
+

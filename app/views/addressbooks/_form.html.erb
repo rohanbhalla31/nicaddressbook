@@ -1,0 +1,72 @@
+<style type="text/css">
+
+body
+{
+background-color:#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:100px;
+}
+
+
+</style>
+<%       s=Addressbook.find_by_username(session[:username])%>
+<%    @name=s.name.titlecase%>
+
+  <%= form_for(@addressbook) do |f| %>
+    <% if @addressbook.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@addressbook.errors.count, "error") %> prohibited this addressbook from being saved:</h2>
+
+        <ul>
+        <% @addressbook.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <br><br>
+  
+
+<table width="90" align="center">
+      <tr>
+      <td width="50%" >Name*    
+    <%= f.text_field :name,:tabindex=>1 %>
+    <td>    
+      Designation*
+      <%= f.text_field :designation ,:tabindex=>2%>
+    </td>
+    </tr>
+    <tr>
+      <td>E-mail*
+      <%= f.text_field :email ,:tabindex=>3%></td>
+      <td> Phone Nos*
+      <%= f.text_field :phoneno ,:tabindex=>4%></td></tr>
+           <% if(@notice=="new" or session[:role]=="administrator") %>
+          <tr>
+            <td>Role*
+       <%= f.select :role, Addressbook::LIST,{:prompt=>"Select Role"},:tabindex=>5%></td>
+     <% end %>
+          <% if(@notice=="new") %>
+          <td>Username*
+       <%= f.text_field :username ,:tabindex=>6%></td>
+      <%end%>
+      <% if @notice!="new" and session[:role]=="administrator"%>
+      <br><br>
+      <% end%></tr>
+      <tr>
+        <td>Password*
+      <%= f.password_field :password ,:tabindex=>7%></td>
+
+
+<td>Confirm Password*
+      <%= f.password_field :password_confirmation,:size=>30 ,:tabindex=>8 %> </td>
+    </tr>
+<tr>  
+  <td><%= f.submit :tabindex=>9%></td>
+</tr>
+<% end %>
+
+  
+

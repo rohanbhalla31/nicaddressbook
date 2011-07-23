@@ -1,0 +1,80 @@
+<%= render 'master'%>
+<table width="100%">
+  <tr>
+
+<form action="/addressbooks/search">
+<br><br>
+<td><input type="text" size="10" name="search" >
+  <select name="list">
+    <option>--Search--</option>
+  <option value="all" >All Visitors</option>
+  <option value="name" >Name</option>
+  <option value="officer" >Officer Visited</option>
+  <option value="company" >Company</option>
+  <input type="submit" value="Search">
+  </select>
+</td>
+</form>
+
+
+
+      <form action="/fileuploads/allfileuploads">
+  <br><br>
+
+  <td> <input type="text" size="10" name="search" >
+     <select name="list">
+    <option>--Search--</option>
+    <option  value="title" >Title</option>
+    <option  value="keywords">Keywords</option>
+
+    <option  value="username">Uploaded By</option>
+    <option  value="all">All Files</option>
+        <input type="submit" value="Search" >
+  </select>
+</td>
+  </form>
+  <td>
+    <form action="/tasklists/alltasks">
+  <input type="text" size="10" name="search" >
+<select name="list" >
+  <option>--Search--</option>
+  <option value="id">Task ID</option>
+  <option value="subject">Title</option>
+  <option value="createdon">Start Date(YYYY-MM-DD)</option>
+  <option value="targetdate">Target Date(YYYY-MM-DD)</option>
+  <option value="priority">Priority</option>
+  <option value="assignedto">Assigned To</option>
+  <option value="status">Current Status</option>
+    <input type="submit" value="Search" >
+</select>
+</form>
+    </td>
+</tr>
+
+
+  <tr>
+    <td><h3>Visitors Diary</h3></td>
+    <td><h3>Document Repository</h3></td>
+    <td><h3>Task Manager</h3></td>
+  </tr>
+  
+  
+<tr>
+  <td><%= link_to 'Add Visitor', "/visitors/new" %></td>
+    <td><%= link_to 'Upload Document', "/fileuploads/new" %></td>
+    <td><%= link_to 'Create Task', "/tasklists/new" %></td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Your Visitors Details', "/visitors/" %></td>
+    <td><%= link_to 'Your Uploaded Documents', "/fileuploads" %></td>
+    <td><%= link_to 'My Task List', "/tasklists" %></td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Search all Shared Visitors', "/addressbooks/search" %></td>
+    <td><%= link_to 'View all Shared Documents', "/fileuploads/allfileuploads" %></td>
+    <td><%= link_to 'View all Tasks', "/tasklists/alltasks" %></td>
+  </tr>
+</table>
+
+
+

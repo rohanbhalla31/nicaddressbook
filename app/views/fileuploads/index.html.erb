@@ -1,0 +1,101 @@
+<style type="text/css">
+h1
+{
+text-align:center;
+font-size:3.0em;
+color:#FF4500;
+}
+
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:70px;
+}
+
+.table1
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+.table1 td
+{
+font-size:1.2em;
+border:1px solid #98bf21;
+padding:3px 7px 2px 7px;
+}
+.table1 th
+{
+font-size:1.4em;
+text-align:center;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#ffffff;
+}
+.table1 tr.alt td
+{
+color:#000000;
+background-color:#EAF2D3;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+.home
+{ position:absolute;
+    left:100px;
+    top:175px;
+}
+.username
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:1.3em;
+    color: #000f21;
+     position:absolute;
+    left:150px;
+    top:200px;
+}
+.controls
+{
+     position:absolute;
+    left:1100px;
+    top:175px;
+}
+</style>
+<%=render 'master'%>
+
+
+
+<img  src="/images/youruploadeddocuments.png"/>
+<br><br> <br>
+
+<table class="table1">
+  <tr>
+    <th>Title</th>
+    <th>File Name</th>
+    <th>Download</th>
+    <th>Uploaded on</th>
+    <th>Mode</th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+<% @fileuploads.each do |fileupload| %>
+  <tr>
+    <td><%= fileupload.title.titlecase %></td>
+    <td><%= fileupload.filename %></td>
+    <td><%= link_to 'Download',"/files/#{fileupload.username+'_'+fileupload.filename}" %></td>
+    <td><%= fileupload.updated_at.to_date %></td>
+    <td><%= fileupload.fvisible.titlecase %></td>
+    <td><%= link_to 'Edit Details', edit_fileupload_path(fileupload) %></td>
+    <td><%= link_to 'Delete', fileupload, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div> 
+

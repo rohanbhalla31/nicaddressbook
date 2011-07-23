@@ -1,0 +1,35 @@
+<style type="text/css">
+
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:100px;
+}
+
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.back
+{ position:absolute;
+  font-size:2.0em;
+    left:600px;
+    top:400px;
+}
+
+
+</style>
+<%= render 'master' %>
+<div class="back">
+<br><br>
+<form action="/tasklists/">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="image" src="/images/back.png" width="50" height="50"/>
+</form>
+</div>

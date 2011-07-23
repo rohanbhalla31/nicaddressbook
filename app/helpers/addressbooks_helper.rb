@@ -1,0 +1,2 @@
+module AddressbooksHelper
+end

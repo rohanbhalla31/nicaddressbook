@@ -1,0 +1,108 @@
+<style type="text/css">
+h1
+{
+text-align:center;
+font-size:3.0em;
+color:#FF4500;
+}
+
+
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:70px;
+}
+
+.table1
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+.table1 td
+{
+font-size:1.2em;
+border:1px solid #98bf21;
+padding:3px 7px 2px 7px;
+}
+.table1 th
+{
+font-size:1.4em;
+text-align:center;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#ffffff;
+}
+.table1 tr.alt td
+{
+color:#000000;
+background-color:#EAF2D3;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+ 
+</style>
+<%=render 'master'%>
+<img src="/images/alltaskslist.png"/>
+
+<form action="/tasklists/alltasks" name="form1">
+  <br><br>
+  <input type="text" name="search" >
+<select name="list" onchange="this.form.submit();">
+  <option>--Search--</option>
+  <option value="id">Task ID</option>
+  <option value="subject">Subject</option>
+  <option value="createdon">Start Date(YYYY-MM-DD)</option>
+  <option value="targetdate">Target Date(YYYY-MM-DD)</option>
+  <option value="priority">Priority</option>
+  <option value="assignedto">Assigned To</option>
+  <option value="status">Current Status</option>
+</select>
+</form>
+
+<br><br>
+<table class="table1">
+  <tr>
+    <th>Task ID</th>
+    <th>Subject</th>
+    <th>Created On</th>
+    <th>Tentative Target Date</th>
+    <th>Priority</th>
+    <th>Current Status</th>
+    <th>Assigned By</th>
+    <th>Assigned To</th>
+    <th>Click here to download</th>
+  </tr>
+<% @tasklists.each do |tasklist| %>
+   <tr>
+    <td><%= tasklist.id %></td>
+    <td><%= tasklist.subject.titlecase %></td>
+    <td><%= tasklist.startdate %></td>
+    <td><%= tasklist.targetdate %></td>
+    <td><%= tasklist.priority %></td>
+
+    <td><%= tasklist.currentstatus %></td>
+    <% s=Addressbook.find_by_username(tasklist.username) %>
+    <td><%= s.name.titlecase %></td>
+    <td><%= tasklist.assignedto.titlecase %></td>
+     <% if(tasklist.filename) %>
+ <td><%= link_to "Download","/tasks/#{tasklist.username+'_'+tasklist.filename}" %></td>
+     <% else %>
+     <td></td>
+    <% end %>
+   </tr>
+  <% end %>
+</table>
+
+<br />
+
+
+
+

@@ -1,0 +1,93 @@
+<head>
+
+<style type="text/css">
+
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:70px;
+}
+
+.table1
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+.table1 td
+{
+font-size:1.2em;
+border:1px solid #98bf21;
+padding:3px 7px 2px 7px;
+}
+.table1 th
+{
+font-size:1.4em;
+text-align:center;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#ffffff;
+}
+.table1 tr.alt td
+{
+color:#000000;
+background-color:#EAF2D3;
+}
+
+</style>
+</head>
+<%= render 'master'%>
+<br>
+<p style="text-align:center; font-size:2.5em">
+<font color="purple"><b>Search Results</b></font><br>
+  </p>
+<br>
+<br>
+<form action="/addressbooks/search">
+<p>
+  <input type="text" name="search" value="Search Visitors" onblur=" if(this.value == ''){this.value = 'Search Visitors';}" onfocus="if(this.value == 'Search Visitors'){this.value = '';};">
+  <select name="list">
+  <option value="all" >All Visitors</option>
+  <option value="name" >Name</option>
+  <option value="officer" >Officer Visited</option>
+  <option value="company" >Company</option>
+  <input type="submit" value="Search">
+  </select>
+</p>
+</form>
+<table class="table1">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Company</th>
+    <th>Designation</th>
+    <th>Officer Visited</th>
+    <th>Date of Visit</th>
+    <th>email</th>
+    <th>Phone No.</th>
+    <br><br><br>
+  </tr>
+</form>
+  <% @visitors.each do |visitor| %>
+  <tr>
+    <td><%= visitor.name.titlecase %></td>
+    <td><%= visitor.address.titlecase %></td>
+    <td><%= visitor.company.titlecase %></td>
+    <td><%= visitor.designation.titlecase %></td>
+    <td><%= visitor.officer.titlecase %></td>
+    <td><%= visitor.dateofvisit %></td>
+    <td><%= mail_to visitor.email %></td>
+    <td><%= visitor.phoneno %></td>
+
+  </tr>
+<% end %>
+</table>
+<br>
+<br>
+
+
+

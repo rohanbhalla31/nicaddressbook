@@ -1,0 +1,40 @@
+<style type="text/css">
+
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:100px;
+}
+
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.back
+{ 
+  font-size:2.0em;
+  text-align:center;
+}
+p
+{text-align:center;
+  color:blue;
+  font-size:1.5em;
+}
+
+</style>
+<%=render 'master'%>
+<b><p> <%= notice %></p></b>
+
+<div class="back">
+  Add More Files<br><br>
+<form action="/fileuploads/">
+<input type="image" src="/images/back.png" width="50" height="50"/>
+</form>
+</div>

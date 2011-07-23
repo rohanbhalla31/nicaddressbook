@@ -1,0 +1,111 @@
+<style type="text/css">
+
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:100px;
+}
+
+
+p
+{
+font-family:lucida sans;
+font-size:1.3em;
+padding:3px 7px 2px 7px;
+}
+b
+{
+font-size:1.4em;
+text-align:center;
+
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+.username
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-align:left;
+    font-size:1.3em;
+    position:absolute;
+    left:120px;
+    top:175px;
+}
+.controls
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:1.3em;
+    color: #000f21;
+     position:absolute;
+    left:1200px;
+    top:175px;
+}
+.edit
+{
+   position:absolute;
+    left:125px;
+    top:320px;
+    
+}
+</style>
+<img src="/images/niclogo.jpg"/><br>
+<div class="username">
+<form action="/addressbooks/">
+        <input type="image" src="/images/home.png" width="50" height="50"/>
+  <b>WELCOME&nbsp;&nbsp;<%=@name%>&nbsp;as&nbsp;<%=session[:role]%></b>
+</form></div><br>
+<div class="controls">
+<input type="image" src="/images/printer.png" onClick="window.print()">
+
+<form action="/addressbooks/logout">
+<input type="submit"  value='Log Out'>
+</form>
+
+</div>
+<p style="text-align:center;font-size:2.0em;"id="notice"><%= notice %><br><br><br>PROFILE DETAILS</p>
+<br>
+<br>
+<br>
+
+<p>
+  <b>Name:</b>
+  <%= @addressbook[0].name.titlecase %>
+<br>
+<br>
+<p>
+  <b>Designation:</b>
+  <%= @addressbook[0].designation.titlecase %>
+</p>
+<br>
+<p>
+  <b>Username:</b>
+  <%= @addressbook[0].username %>
+</p>
+<br>
+<p>
+  <b>Role:</b>
+  <%= @addressbook[0].role %>
+</p>
+<br>
+
+<p>
+  <b>Phone Nos:</b>
+  <%= @addressbook[0].phoneno %>
+</p>
+<br>
+<p>
+  <b>Email:</b>
+  <%= @addressbook[0].email %>
+</p>
+<br>
+
+<div class="edit">
+  
+<%= button_to 'Edit Profile', edit_addressbook_path(@addressbook),:method=>"get" %>
+</div>
+
+

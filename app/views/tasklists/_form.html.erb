@@ -1,0 +1,90 @@
+
+
+<%= javascript_include_tag 'prototype' %>
+<%= javascript_include_tag 'datepicker' %>
+<style type="text/css">
+div
+{
+text-align:left;
+margin-left:50px;
+font-size:1.3em;
+color:#800080;
+}
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:100px;
+}
+
+
+
+</style>
+
+<%s=Addressbook.find_by_username(session[:username])%>
+<%@name=s.name.titlecase%>
+ 
+
+
+<%= form_for(@tasklist,:html=> {:multipart=>true}) do |f| %>
+  <% if @tasklist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tasklist.errors.count, "error") %> prohibited this tasklist from being saved:</h2>
+
+      <ul>
+      <% @tasklist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table width="90" align="center">
+      <tr>
+        <td width="50%" >Subject*
+    <%= f.text_field :subject,:tabindex=>1 %><br><br></td>
+    <td>Assigned To<br>
+      <%= f.select :assignedto,Tasklist::NAMELIST,{:prompt=>"Select"} ,:tabindex=>2%></td>
+    </tr>
+    <tr>
+      <td>Start Date*
+      <%= f.date_picker_text_field :startdate ,:tabindex=>3%>(mm/dd/yyyy)</td>
+      <td> Target Date*
+      <%= f.date_picker_text_field :targetdate ,:tabindex=>4%>(mm/dd/yyyy)</td>
+    </tr>
+    <tr>
+      <td>Select Priority
+      <%= f.select :priority, Tasklist::LIST,{},:tabindex=>5%></td>
+      
+      <td>Current Status
+      <%= f.text_field :currentstatus ,:tabindex=>6%></td>
+    </tr>
+    <tr>
+      <td>Task Type
+      <%= f.select :tasktype, Tasklist::TYPE,{},:tabindex=>7%></td>
+       <%if @notice=='new'%>
+      <td>Upload a Document
+        <%= f.file_field :load_file ,:tabindex=>8%><br>
+      (only doc, docx, ppt, pptx, xls, xlsx, pdf, txt, rtf, odt, ott, oth, odm)</td>
+       <%end%>
+    </tr>
+    <tr>
+      <td>Private</td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td>Shared</td>
+    <br>
+  </tr>
+  <tr>
+    <td><%= f.radio_button :tvisible,'private' ,:tabindex=>9 %></td>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td><%= f.radio_button :tvisible,'shared'  ,:tabindex=>10%></td>
+  </tr>
+  
+  <div class="actions">
+    <tr><td><%= f.submit :tabindex=>11 %></td></tr>
+  </div>
+      </table>
+<% end %>
+

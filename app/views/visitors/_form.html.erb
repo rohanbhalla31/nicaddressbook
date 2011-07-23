@@ -1,0 +1,94 @@
+
+<%= javascript_include_tag 'prototype' %>
+<%= javascript_include_tag 'datepicker' %>
+<style type="text/css">
+div
+{
+text-align:left;
+margin-left:50px;
+font-size:1.3em;
+color:#800080;
+}
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:100px;
+}
+
+
+</style>
+
+<%       s=Addressbook.find_by_username(session[:username])%>
+<%    @name=s.name.titlecase%>
+ 
+
+ <%= form_for @visitor do |f|  %>
+  <% if @visitor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@visitor.errors.count, "error") %> prohibited this visitor from being saved:</h2>
+
+      <ul>
+      <% @visitor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <table width="90" align="center">
+      <tr>
+        <td width="50%" >Name*
+            <%= f.text_field :name,:tabindex=>1 %>
+        </td>
+        <td>
+          Designation
+      <%= f.text_field :designation,:tabindex=>2 %><br>
+        </td>
+      </tr>
+      <tr>
+        <td>Phone No
+            <%= f.text_field :phoneno,:tabindex=>3 %><br>
+        </td>
+        <td>E-mail
+            <%= f.text_field :email,:tabindex=>4 %><br>
+        </td>
+      </tr>
+      <tr>
+        <td> Company name
+            <%= f.text_field :company,:tabindex=>5 %><br>
+        </td>
+        <td>Office Address
+            <%= f.text_field :address,:tabindex=>6 %><br>
+        </td>
+      </tr>
+      <tr>
+        <td width="100%"> Date of Visit
+            <%= f.date_picker_text_field :dateofvisit,:tabindex=>7%>(mm/dd/yyyy)<br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Private
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Shared
+    <br>
+   <%= f.radio_button :visible,'private',:tabindex=>8  %>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <%= f.radio_button :visible,'shared',:tabindex=>8  %>
+        </td>
+      </tr>
+       <div class="actions">
+        <tr>
+          <td><%= f.submit :tabindex=>9%></td>
+        </tr>
+      </div>
+    </table>
+
+
+<% end %>
+
+

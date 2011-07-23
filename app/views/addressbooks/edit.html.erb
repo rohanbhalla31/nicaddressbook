@@ -1,0 +1,49 @@
+<style type="text/css">
+h1
+{
+text-align:center;
+font-size:3.0em;
+color:#FF4500;
+}
+body
+{
+background-color:#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:70px;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+.back
+    {
+      position:absolute;
+    left:600px;
+    top:600px; 
+    }
+.home
+{
+  position:absolute;
+    left:80px;
+    top:175px;
+}
+</style>
+
+<%s=Addressbook.find_by_username(session[:username])%>
+<%@name=s.name.titlecase%>
+
+<%= render 'master'%>
+<img src="/images/editdetails.png"/>
+
+<%= render 'form' %>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="back">
+<%if session[:role]=='user'%>
+<form action="/addressbooks/homeuser">
+  <input type="image" src="/images/back.png" width="50" height="50"/>
+</form></div>
+
+<%end%>
+

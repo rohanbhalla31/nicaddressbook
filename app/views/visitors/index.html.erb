@@ -1,0 +1,114 @@
+<head>
+
+<style type="text/css">
+h1
+{
+text-align:center;
+font-size:3.0em;
+color:#FF4500;
+}
+h2
+{
+text-align:center;
+font-size:2.0em;
+color:#FF4500;
+}
+
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:70px;
+}
+
+.table1
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+.table1 td
+{
+font-size:1.2em;
+border:1px solid #98bf21;
+padding:3px 7px 2px 7px;
+}
+.table1 th
+{
+font-size:1.4em;
+text-align:center;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#ffffff;
+}
+.table1 tr.alt td
+{
+color:#000000;
+background-color:#EAF2D3;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+ 
+</style>
+</head>
+<%= render 'master'%>
+
+  <br> <p align="center">
+<font size="6" color="green"><b>View Visitors</b></font><br>
+  </p>
+
+<br>
+<br>
+<form action="/visitors">
+<select name="list">
+
+  <option value="name">Name</option>
+  <option value="company">Company</option>
+  <option value="dateofvisit">Date of Visit</option>
+  <option value="designation">Designation</option>
+</select>
+
+<input type="submit" value="Submit">
+</form>
+<br>
+
+<table class="table1">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Company</th>
+
+     <th>Designation</th>
+    <th>Date of Visit</th>
+    <th>email</th>
+    <th>Phone No.</th>
+
+
+    <th></th>
+    <th></th>
+    <br><br><br>
+  </tr>
+</form>
+  <% @visitors.each do |visitor| %>
+  <tr>
+    <td><%= visitor.name.titlecase %></td>
+    <td><%= visitor.address.titlecase %></td>
+    <td><%= visitor.company.titlecase %></td>
+    <td><%= visitor.designation.titlecase %></td>
+    <td><%= visitor.dateofvisit %></td>
+    <td><%= mail_to visitor.email  %></td>
+    <td><%= visitor.phoneno %></td>
+    <td><%= link_to 'Edit Details', edit_visitor_path(visitor) %></td>
+    <td><%= link_to 'Delete', visitor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br>
+<br>
+
+

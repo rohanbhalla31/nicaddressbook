@@ -1,0 +1,83 @@
+<style type="text/css">
+
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:100px;
+}
+
+
+p
+{
+font-family:lucida sans;
+font-size:1.3em;
+padding:3px 7px 2px 7px;
+}
+b
+{
+font-size:1.4em;
+text-align:center;
+
+}
+
+
+
+.edit
+{
+   position:absolute;
+    left:125px;
+    top:320px;
+    
+}
+
+</style>
+<%= render 'master'%>
+<p style="text-align:center;font-size:2.0em;"id="notice"><br><%= notice %><br><br><br>EMPLOYEE DETAILS</p>
+<br>
+<br>
+<br>
+<p>
+  <b>Name:</b>
+  <%= @addressbook.name.titlecase %>
+
+</p>
+
+<p>
+  <b>Designation:</b>
+  <%= @addressbook.designation.titlecase %>
+
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @addressbook.username %>
+
+</p>
+<p>
+  <b>Role:</b>
+  <%= @addressbook.role.titlecase %>
+
+</p>
+<p>
+  <b>Phone Nos:</b>
+  <%= @addressbook.phoneno %>
+
+</p>
+<p>
+  <b>E-mail:</b>
+  <%= @addressbook.email %>
+
+</p>
+
+  <div class="edit">
+    <%if session[:role]=='user'%>
+   <%= button_to 'Edit Profile', edit_addressbook_path(@addressbook),:method=>"get" %>
+  <%end%>
+</div>
+
+
+
+

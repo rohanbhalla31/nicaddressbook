@@ -1,0 +1,85 @@
+<style type="text/css">
+
+body
+{
+background-color:	#D6F7F8;
+padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:100px;
+}
+
+
+p
+{
+font-family:lucida sans;
+font-size:1.3em;
+padding:3px 7px 2px 7px;
+}
+b
+{
+font-size:1.4em;
+text-align:center;
+
+}
+.edit
+{
+  text-align:center;
+  font-size:2.0em;
+  color:blue;
+}
+
+</style>
+<%=render 'master'%>
+
+<p style="text-align:center;font-size:2.0em;"id="notice"><%= notice %><br></p>
+  <div class="edit">  
+  VISITOR DETAILS<br><br>
+<%= button_to 'Edit Details', edit_visitor_path(@visitor),:method=>"get" %> 
+</div>
+<br>
+<br>
+
+<p>
+  <b>Name:</b>
+  <%= @visitor.name.titlecase %>
+</p>
+
+<p>
+  <b>Office Address:</b>
+  <%= @visitor.address.titlecase %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @visitor.company.titlecase %>
+</p>
+ <p>
+  <b>Designation:</b>
+  <%= @visitor.designation %>
+</p>
+<p>
+  <b>Officer Visited:</b>
+  <%= @visitor.officer.titlecase %>
+</p>
+<p>
+  <b>Date of Visit:</b>
+  <%= @visitor.dateofvisit %>
+</p>
+
+ <p>
+  <b>email:</b>
+  <%= @visitor.email %>
+</p>
+<p>
+  <b>Phone No.:</b>
+  <%= @visitor.phoneno %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @visitor.visible %>
+</p>
+
+
+
