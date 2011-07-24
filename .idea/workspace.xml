@@ -26,7 +26,17 @@
     <favorites_list name="nicaddressbook" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="login.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/addressbooks/login.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="26" selection-start="463" selection-end="463" vertical-scroll-proportion="0.5747331">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -43,7 +53,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/fileuploads/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/fileuploads/allfileuploads.html.erb" />
         <option value="$PROJECT_DIR$/app/views/addressbooks/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/addressbooks/new.html.erb" />
@@ -59,6 +68,7 @@
         <option value="$PROJECT_DIR$/app/views/visitors/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/tasklists/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/tasklists_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/addressbooks/login.html.erb" />
       </list>
     </option>
   </component>
@@ -95,6 +105,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -144,22 +156,42 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addressbooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nicaddressbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nicaddressbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="recentsLimit" value="5" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -401,14 +433,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3252464" sideWeight="0.68455285" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3313116" sideWeight="0.68455285" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31544715" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -454,11 +486,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20110630104452_create_visitors.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="456" selection-end="456" vertical-scroll-proportion="0.4914966" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/datepicker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="151" column="10" selection-start="5010" selection-end="5010" vertical-scroll-proportion="0.94086957" />
@@ -481,77 +508,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tasklists/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="14" selection-start="2360" selection-end="2360" vertical-scroll-proportion="0.8790036">
-          <folding />
-        </state>
+        <state line="87" column="14" selection-start="2360" selection-end="2360" vertical-scroll-proportion="0.8790036" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tasklists_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="10" selection-start="6722" selection-end="6722" vertical-scroll-proportion="0.26086956">
-          <folding />
-        </state>
+        <state line="158" column="10" selection-start="6722" selection-end="6722" vertical-scroll-proportion="0.26086956" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/visitors/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="27" selection-start="2096" selection-end="2096" vertical-scroll-proportion="0.5160142">
-          <folding />
-        </state>
+        <state line="84" column="27" selection-start="2096" selection-end="2096" vertical-scroll-proportion="0.5160142" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/visitors/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="4" selection-start="389" selection-end="389" vertical-scroll-proportion="0.57651246">
-          <folding />
-        </state>
+        <state line="25" column="4" selection-start="389" selection-end="389" vertical-scroll-proportion="0.57651246" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/addressbooks_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/plugins/Calendar-DatePicker-for-Rails/public/javascripts/datepicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="18" selection-start="2885" selection-end="2885" vertical-scroll-proportion="0.94086957">
-          <folding />
-        </state>
+        <state line="86" column="18" selection-start="2885" selection-end="2885" vertical-scroll-proportion="0.94086957" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/plugins/Calendar-DatePicker-for-Rails/lib/calendar_date_picker.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/plugins/Calendar-DatePicker-for-Rails/install.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/plugins/Calendar-DatePicker-for-Rails/init.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/plugins/Calendar-DatePicker-for-Rails/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="20" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="20" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/addressbooks/login.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="26" selection-start="463" selection-end="463" vertical-scroll-proportion="0.5747331">
           <folding />
         </state>
       </provider>
