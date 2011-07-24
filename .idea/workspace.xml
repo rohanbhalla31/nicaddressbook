@@ -30,7 +30,7 @@
       <file leaf-file-name="login.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/addressbooks/login.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="26" selection-start="463" selection-end="463" vertical-scroll-proportion="0.5747331">
+            <state line="17" column="35" selection-start="407" selection-end="407" vertical-scroll-proportion="0.5142349">
               <folding />
             </state>
           </provider>
@@ -433,7 +433,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -563,7 +563,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/addressbooks/login.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="26" selection-start="463" selection-end="463" vertical-scroll-proportion="0.5747331">
+        <state line="17" column="35" selection-start="407" selection-end="407" vertical-scroll-proportion="0.5142349">
           <folding />
         </state>
       </provider>
