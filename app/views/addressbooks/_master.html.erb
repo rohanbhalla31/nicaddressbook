@@ -11,22 +11,10 @@ background-color:#D6F7F8;
  <table border="0" width="90%">
   <tr border="0">
     <td border="0">
-  <%if session[:role]=="administrator" %>
-<form action="/addressbooks/homeadmin">
-  <input type="image" src="/images/home.png" width="25" height="25"/>
-</form>
-<%else%>
-<form action="/addressbooks/">
-  <input type="image" src="/images/home.png" width="25" height="25"/>
-</form>
-<%end%>
+  
 </td>
 
-<td width="60%" align="left"><b>WELCOME &nbsp;&nbsp;<%=@name%>&nbsp;&nbsp;&nbsp;</b><font face="verdana" size="1.5" color="green"><b>
-  <%if session[:role]!="administrator" %>  
-<%= link_to 'View/Edit Profile', "/addressbooks/homeuser" %></b></font></td>
-<%end%>
-<form action="/addressbooks/logout" method="get">
+  <form action="/addressbooks/logout" method="get">
 <td width="40%" align="right"><input type="submit" value="Logout"></td>
 </form>
 <td><input type="image" src="/images/printer.png" onClick="window.print()"></td>
