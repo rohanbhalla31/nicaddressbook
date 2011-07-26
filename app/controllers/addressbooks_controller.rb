@@ -41,16 +41,7 @@ class AddressbooksController < ApplicationController
   # GET /addressbooks/new
   # GET /addressbooks/new.xml
   def new
- if(session[:role]!='administrator' or !session[:username])
-      redirect_to "/addressbooks/login" and return
-    end
-     if(Time.now-1.hours>session[:time].to_time)
-        redirect_to "/addressbooks/logout",:notice=>"Session expired" and return
-      else
-        session[:time]=Time.now
-      end
-       s=Addressbook.find_by_username(session[:username])
-    @name=s.name.titlecase
+ 
     @addressbook = Addressbook.new
 
     respond_to do |format|
