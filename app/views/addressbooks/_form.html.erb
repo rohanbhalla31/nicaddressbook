@@ -11,8 +11,7 @@ padding-left:100px;
 
 
 </style>
-<%       s=Addressbook.find_by_username(session[:username])%>
-<%    @name=s.name.titlecase%>
+
 
   <%= form_for(@addressbook) do |f| %>
     <% if @addressbook.errors.any? %>
